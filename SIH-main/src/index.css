@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Blockchain Agricultural Supply Chain Design System */
+
+@layer base {
+  :root {
+    /* Agricultural Theme - Earth tones with tech accents */
+    --background: 47 15% 97%;
+    --foreground: 138 62% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 138 62% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 138 62% 15%;
+
+    /* Forest Green Primary - Agriculture theme */
+    --primary: 138 62% 22%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 138 45% 35%;
+
+    /* Warm Earth Secondary */
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 138 62% 22%;
+
+    /* Muted earth tones */
+    --muted: 42 20% 94%;
+    --muted-foreground: 138 25% 45%;
+
+    /* Tech Blue Accent */
+    --accent: 210 85% 95%;
+    --accent-foreground: 210 85% 25%;
+
+    /* Orange warning for rejections */
+    --destructive: 15 85% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Success green for approvals */
+    --success: 138 62% 35%;
+    --success-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 42 15% 88%;
+    --input: 42 15% 88%;
+    --ring: 138 62% 22%;
+
+    /* Custom gradients for blockchain theme */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(138 62% 22%), hsl(210 85% 25%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(42 20% 98%));
+    --gradient-blockchain: linear-gradient(90deg, hsl(var(--primary)), hsl(210 85% 45%));
+
+    /* Shadows with primary color */
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-blockchain: 0 8px 32px -8px hsl(var(--primary) / 0.25);
+    --shadow-hero: 0 20px 60px -12px hsl(var(--primary) / 0.35);
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with deep forest theme */
+    --background: 138 25% 8%;
+    --foreground: 47 15% 92%;
+
+    --card: 138 20% 12%;
+    --card-foreground: 47 15% 92%;
+
+    --popover: 138 20% 12%;
+    --popover-foreground: 47 15% 92%;
+
+    --primary: 138 45% 55%;
+    --primary-foreground: 138 25% 8%;
+    --primary-glow: 138 60% 65%;
+
+    --secondary: 138 15% 18%;
+    --secondary-foreground: 47 15% 92%;
+
+    --muted: 138 15% 15%;
+    --muted-foreground: 138 10% 65%;
+
+    --accent: 210 75% 85%;
+    --accent-foreground: 138 25% 8%;
+
+    --destructive: 15 85% 65%;
+    --destructive-foreground: 138 25% 8%;
+
+    --success: 138 55% 45%;
+    --success-foreground: 138 25% 8%;
+
+    --border: 138 15% 20%;
+    --input: 138 15% 20%;
+    --ring: 138 45% 55%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(138 25% 8%), hsl(138 45% 15%));
+    --gradient-card: linear-gradient(135deg, hsl(138 20% 12%), hsl(138 15% 15%));
+    --gradient-blockchain: linear-gradient(90deg, hsl(var(--primary)), hsl(210 75% 55%));
+
+    /* Dark shadows */
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-blockchain: 0 8px 32px -8px hsl(var(--primary) / 0.4);
+    --shadow-hero: 0 20px 60px -12px hsl(var(--primary) / 0.5);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom utility classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-blockchain {
+    background: var(--gradient-blockchain);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-blockchain {
+    box-shadow: var(--shadow-blockchain);
+  }
+
+  .shadow-hero {
+    box-shadow: var(--shadow-hero);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Blockchain animation */
+  .blockchain-block {
+    @apply relative overflow-hidden;
+  }
+
+  .blockchain-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* QR Code scanner animation */
+  .qr-scanner {
+    position: relative;
+  }
+
+  .qr-scanner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: hsl(var(--primary));
+    animation: scan 2s ease-in-out infinite;
+  }
+
+  @keyframes scan {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(200px); opacity: 0.7; }
+  }
+}
+
+@layer components {
+  /* Glassmorphism for dialogs and cards */
+  .glass-card {
+    background: hsla(var(--card) / 0.85);
+    backdrop-filter: blur(8px) saturate(1.2);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 32px 0 hsla(var(--primary) / 0.10);
+    border: 1px solid hsla(var(--border) / 0.25);
+  }
+
+  /* Animated gradient border for active/selected cards */
+  .gradient-border {
+    position: relative;
+    z-index: 0;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary-glow)), hsl(var(--accent)));
+    background-size: 200% 200%;
+    animation: border-gradient-move 3s linear infinite;
+  }
+  @keyframes border-gradient-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  /* Button hover and focus effects */
+  .btn-attractive {
+    @apply transition-smooth shadow-card;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-attractive::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, hsl(var(--primary-glow)) 0%, transparent 70%);
+    opacity: 0.2;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+    z-index: 0;
+  }
+  .btn-attractive:hover::after, .btn-attractive:focus::after {
+    width: 200%;
+    height: 200%;
+  }
+  .btn-attractive:hover, .btn-attractive:focus {
+    box-shadow: 0 6px 24px -4px hsl(var(--primary) / 0.18);
+    filter: brightness(1.05);
+  }
+
+  /* Card hover scaling and shadow */
+  .card-attractive {
+    @apply transition-smooth shadow-card;
+    will-change: transform, box-shadow;
+  }
+  .card-attractive:hover {
+    transform: translateY(-4px) scale(1.025);
+    box-shadow: 0 8px 32px -8px hsl(var(--primary) / 0.18);
+    border-color: hsl(var(--primary));
+  }
+
+  /* Section divider with wavy SVG */
+  .section-divider {
+    width: 100%;
+    height: 48px;
+    background: url('data:image/svg+xml;utf8,<svg width="100%" height="48" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C120 48 360 0 720 24C1080 48 1320 0 1440 24V48H0V24Z" fill="%23e6f4ea"/></svg>') repeat-x;
+    background-size: cover;
+    margin: 0;
+    border: none;
+  }
+
+  /* Animated icon pulse */
+  .icon-pulse {
+    animation: icon-pulse 1.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @keyframes icon-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.12); opacity: 0.85; }
+  }
+}
